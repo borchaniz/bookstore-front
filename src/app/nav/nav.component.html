@@ -9,12 +9,8 @@
               <ul>
                 <li class="hassubs">
                   <a href="">Categories</a>
-                  <ul>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
+                  <ul class="subs">
+                    <li *ngFor="let genre of genres"><a href="" routerLink="/{{genre.id}}">{{genre.label}}</a></li>
                   </ul>
                 </li>
               </ul>
@@ -22,7 +18,7 @@
             <div class="header_extra ml-auto">
               <div class="shopping_cart">
                 <a href="cart.html">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 												 viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
 											<g>
 												<path d="M440.1,422.7l-28-315.3c-0.6-7-6.5-12.3-13.4-12.3h-57.6C340.3,42.5,297.3,0,244.5,0s-95.8,42.5-96.6,95.1H90.3

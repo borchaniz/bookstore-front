@@ -7,7 +7,8 @@ import {HomeComponent} from './home/home.component';
 export const routes: Route [] = [
   {
     path: '', component: NavComponent, children: [
-      {path: '', component: HomeComponent}
+      {path: '', component: HomeComponent},
+      {path: ':id', component: HomeComponent}
     ]
   }
 ];

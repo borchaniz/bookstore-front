@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BookService} from '../shared/services/book.service';
+import {Genre} from '../shared/models/genre';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  genres: Genre[] = [];
+
+  constructor(private bookService: BookService) {
+  }
 
   ngOnInit() {
+    this.bookService.getAllGenres().subscribe(data => {
+      this.genres = data;
+    });
   }
 
 }
