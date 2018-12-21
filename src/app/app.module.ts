@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {BookService} from './shared/services/book.service';
 import {HttpClientModule} from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

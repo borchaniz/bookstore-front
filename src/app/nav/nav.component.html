@@ -8,16 +8,16 @@
             <nav class="main_nav">
               <ul>
                 <li class="hassubs">
-                  <a href="">Categories</a>
+                  <a>Categories</a>
                   <ul class="subs">
-                    <li *ngFor="let genre of genres"><a href="" routerLink="/{{genre.id}}">{{genre.label}}</a></li>
+                    <li *ngFor="let genre of genres"><a href="" routerLink="/category/{{genre.id}}">{{genre.label}}</a></li>
                   </ul>
                 </li>
               </ul>
             </nav>
             <div class="header_extra ml-auto">
               <div class="shopping_cart">
-                <a href="cart.html">
+                <a>
                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 												 viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
 											<g>
@@ -31,6 +31,40 @@
                   <div>Cart <span>(0)</span></div>
                 </a>
               </div>
+              <div class="shopping_cart">
+                <a>
+                  <div style="margin-left: 5px" class="hassubs">
+                    <i class="fa fa-user"></i>Login/ Sign Up
+                    <ul class="subs rounded-border" style="text-align: left; ">
+                      <div class="row"style="min-width: 300px">
+                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8">
+                          <div class="form-group">
+                            <label class="sr-only">Email address</label>
+                            <input type="email" class="form-control" placeholder="Email address"
+                                   required>
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only">Password</label>
+                            <input type="password" class="form-control"
+                                   placeholder="Password" required autocomplete="off">
+                          </div>
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> keep me logged-in
+                            </label>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="bottom text-center" style="margin-left: 28px">
+                        New here ? <a routerLink = "/join"><b>Join Us</b></a>
+                      </div>
+                    </ul>
+                  </div>
+                </a>
+              </div>
               <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
             </div>
           </div>
@@ -41,4 +75,3 @@
 </header>
 
 <router-outlet></router-outlet>
-

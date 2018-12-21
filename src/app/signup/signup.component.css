@@ -1,0 +1,43 @@
+.bg{
+  background: #f2f2f2;
+  width: 100vw;
+  height: 100vh;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding:50px;
+}
+.container{
+  background: white;
+  padding: 30px 40px 40px;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 23px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 23px -4px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 23px -4px rgba(0,0,0,0.75);
+}
+
+label{
+  font-size: 18px;
+  color:#808080;
+}
+.logo{
+  padding-bottom: 20px;
+}
+
+::placeholder {
+  color: #b1b1b1;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+::-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+.btn{
+  margin-top: 20px;
+  padding:10px 20px;
+}
