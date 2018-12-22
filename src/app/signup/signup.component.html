@@ -4,29 +4,32 @@
     <form>
       <div class="form-group" style="text-align: left">
         <Label>Name: </Label>
-        <input class="form-control" name="name" placeholder="Name">
+        <input class="form-control" name="name" placeholder="Name" [(ngModel)]="user.name" type="text">
       </div>
       <div class="form-group" style="text-align: left">
         <Label>Family Name: </Label>
-        <input class="form-control" name="fname" placeholder="Family Name">
+        <input class="form-control" name="fname" placeholder="Family Name" [(ngModel)]="user.familyName" type="text">
       </div>
       <div class="form-group" style="text-align: left">
         <Label>Email: </Label>
-        <input class="form-control" name="email" placeholder="Email">
+        <input class="form-control" name="email" placeholder="Email" [(ngModel)]="user.email" type="email">
+        <h6 *ngIf="user.email.length && !this.user.validEmail()">*Please enter a valid email</h6>
       </div>
       <div class="form-group" style="text-align: left">
         <Label>Phone Number: </Label>
-        <input class="form-control" name="phone" placeholder="Phone Number">
+        <input class="form-control" name="phone" placeholder="Phone Number" [(ngModel)]="user.phone" type="number">
       </div>
       <div class="form-group" style="text-align: left">
         <Label>Password: </Label>
-        <input class="form-control" name="password" placeholder="Password">
+        <input class="form-control" name="password" placeholder="Password" [(ngModel)]="user.password" type="password">
+        <h6 *ngIf="user.password.length && user.password.length<6">*Password must be at least 8 characters long!</h6>
       </div>
       <div class="form-group" style="text-align: left">
         <Label>Confirm Password: </Label>
-        <input class="form-control" name="c-password" placeholder="Confirm Password">
+        <input class="form-control" name="c-password" placeholder="Confirm Password" [(ngModel)] = "user.cPassword" type="password">
+        <h6 *ngIf="user.cPassword.length && user.cPassword != user.password">*Passwords do not match </h6>
       </div>
-      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <button type="submit" class="btn btn-primary" (click)="register()">Sign Up</button>
     </form>
   </div>
 </div>
