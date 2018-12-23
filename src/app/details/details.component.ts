@@ -11,6 +11,7 @@ import {Book} from '../shared/models/book';
 export class DetailsComponent implements OnInit {
   id:number;
   book:Book = new Book();
+  quantity:number = 1;
   constructor(private route:ActivatedRoute,
               private bookService:BookService,
               private router:Router) { }
@@ -26,4 +27,5 @@ export class DetailsComponent implements OnInit {
     })
   }
 
+  addToCart(){}
 }

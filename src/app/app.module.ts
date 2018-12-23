@@ -11,6 +11,7 @@ import {SignupComponent} from './signup/signup.component';
 import {FormsModule} from '@angular/forms';
 import {UserService} from './shared/services/user.service';
 import { DetailsComponent } from './details/details.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { DetailsComponent } from './details/details.component';
     HomeComponent,
     SignupComponent,
     DetailsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

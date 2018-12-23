@@ -4,6 +4,7 @@ import {NavComponent} from './nav/nav.component';
 import {HomeComponent} from './home/home.component';
 import {SignupComponent} from './signup/signup.component';
 import {DetailsComponent} from './details/details.component';
+import {CartComponent} from './cart/cart.component';
 
 
 export const routes: Route [] = [
@@ -11,8 +12,9 @@ export const routes: Route [] = [
   {
     path: '', component: NavComponent, children: [
       {path: '', component: HomeComponent},
+      {path: 'category/:id', component: HomeComponent},
       {path: 'details/:id', component: DetailsComponent},
-      {path: 'category/:id', component: HomeComponent}
+      {path: 'cart', component: CartComponent}
     ]
   },
 
