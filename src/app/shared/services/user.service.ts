@@ -31,6 +31,10 @@ export class UserService extends GenericService {
   addToCart(bookId:number, quantity:number) : Observable<any>{
     const headers = this.headers.set("Authorization", localStorage.getItem(Consts.TOKEN_STORAGE));
     return <Observable<any>> this.http.post(this.url+"user/addToCart",{bookId:bookId, quantity:quantity},{headers:headers});
+  }
 
+  clearCart():Observable<User> {
+    const headers = this.headers.set("Authorization", localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<User>> this.http.delete(this.url+'user/clearCart',{headers:headers});
   }
 }

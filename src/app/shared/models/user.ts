@@ -9,6 +9,7 @@ export class User {
   familyName = '';
   phone: number;
   cart:CartElement[] = [];
+  totalCart:number;
 
   isValid() {
     return (this.name !== ''

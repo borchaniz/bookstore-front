@@ -1,5 +1,5 @@
 <div class="cart_info">
-  <div class="container">
+  <div class="container" *ngIf="user.cart.length">
     <div class="row" style="margin-top: 50px" >
       <div class="col">
         <!-- Column Titles -->
@@ -47,7 +47,7 @@
         <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
           <div class="button continue_shopping_button"><a routerLink="/">Continue shopping</a></div>
           <div class="cart_buttons_right ml-lg-auto">
-            <div class="button clear_cart_button"><a href="#">Clear cart</a></div>
+            <div class="button clear_cart_button" (click)="clearCart()"><a>Clear cart</a></div>
           </div>
         </div>
       </div>
@@ -60,16 +60,8 @@
           <div class="cart_total_container">
             <ul>
               <li class="d-flex flex-row align-items-center justify-content-start">
-                <div class="cart_total_title">Subtotal</div>
-                <div class="cart_total_value ml-auto">$790.90</div>
-              </li>
-              <li class="d-flex flex-row align-items-center justify-content-start">
-                <div class="cart_total_title">Shipping</div>
-                <div class="cart_total_value ml-auto">Free</div>
-              </li>
-              <li class="d-flex flex-row align-items-center justify-content-start">
                 <div class="cart_total_title">Total</div>
-                <div class="cart_total_value ml-auto">$790.90</div>
+                <div class="cart_total_value ml-auto">{{user.totalCart}}DT</div>
               </li>
             </ul>
           </div>
@@ -78,4 +70,8 @@
       </div>
     </div>
   </div>
-</div>
+  <div class="container" *ngIf="!user.cart.length" style="text-align: center;margin-top: 15%">
+    <h3>Your cart is still empty empty</h3>
+    <div class="button" style="text-align: center; margin: 20px auto auto;"><a routerLink="/">Start shopping</a></div>
+  </div>
+  </div>

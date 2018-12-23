@@ -29,7 +29,7 @@
           </div>
 
           <!-- Product Quantity -->
-          <div class="product_quantity_container">
+          <div class="product_quantity_container" *ngIf="!added && connected">
             <div class="product_quantity clearfix">
               <span>Qty</span>
               <input id="quantity_input" type="text" pattern="[0-9]*" value="1" [(ngModel)]="quantity">
@@ -44,7 +44,11 @@
               </div>
             </div>
             <div class="button cart_button"><a (click)="addToCart()">Add to cart</a></div>
+            <br>
           </div>
+          <label style="font-size: 2.4em; color: #808080; margin-top: 56px; margin-left: 40px" *ngIf="added"><i
+            class="fa fa-check"></i>Added</label>
+          <label style="font-size: 1.2em; color: #808080; margin-top: 56px;" *ngIf="!connect"><i class="fa fa-user"></i> &nbsp; Sign in to manage your cart</label>
 
         </div>
       </div>
