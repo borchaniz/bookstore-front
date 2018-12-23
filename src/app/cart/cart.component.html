@@ -15,29 +15,29 @@
       <div class="col">
 
         <!-- Cart Item -->
-        <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+        <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" *ngFor="let item of user.cart">
           <!-- Name -->
           <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
             <div class="cart_item_image">
               <div><img src="assets/img/product_1.jpg" alt=""></div>
             </div>
             <div class="cart_item_name_container">
-              <div class="cart_item_name"><a href="#">Smart Phone Deluxe Edition</a></div>
-              <div class="cart_item_edit"><a href="#">Edit Product</a></div>
+              <div class="cart_item_name"><a>{{item.book.title}}</a></div>
+              <div class="cart_item_edit"><a>{{item.book.genre.label}}</a></div>
             </div>
           </div>
           <!-- Price -->
-          <div class="cart_item_price">$790.90</div>
+          <div class="cart_item_price">{{item.book.price}}DT</div>
           <!-- Quantity -->
           <div class="cart_item_quantity">
             <div class="product_quantity_container">
               <div class="product_quantity clearfix">
-                <span>Qty</span>
+                <span>{{item.quantity}}</span>
               </div>
             </div>
           </div>
           <!-- Total -->
-          <div class="cart_item_total">$790.90</div>
+          <div class="cart_item_total">{{item.book.price*item.quantity}}DT</div>
         </div>
 
       </div>

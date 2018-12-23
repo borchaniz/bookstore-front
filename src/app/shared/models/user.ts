@@ -1,3 +1,5 @@
+import {CartElement} from './cart-element';
+
 export class User {
   id: number;
   email = '';
@@ -6,6 +8,7 @@ export class User {
   name = '';
   familyName = '';
   phone: number;
+  cart:CartElement[] = [];
 
   isValid() {
     return (this.name !== ''
