@@ -29,4 +29,9 @@ export class BookService extends GenericService {
   public getBooksByGenre(id: number): Observable<Array<Book>> {
     return <Observable<Array<Book>>> this.http.get(this.url + 'genre/' + id);
   }
+
+  get(id: number):Observable<Book> {
+    return <Observable<Book>> this.http.get(this.url+id);
+
+  }
 }

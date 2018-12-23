@@ -6,5 +6,5 @@ export class Book {
   synopsis: string;
   price: number;
   issuedOn: Date;
-  genre: Genre;
+  genre: Genre = new Genre();
 }

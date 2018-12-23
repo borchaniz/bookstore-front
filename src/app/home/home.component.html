@@ -4,7 +4,7 @@
       <div class="col">
         <div class="product_grid">
           <!-- Product -->
-          <div class="col-md-4" *ngFor="let book of books">
+          <div class="col-md-4" *ngFor="let book of books" style="cursor: pointer" routerLink="/details/{{book.id}}">
             <div class="product_image"><img src="assets/img/product_1.jpg" alt=""></div>
             <div class="product_content">
               <div class="product_title"><a href="product.html">{{book.title}}</a></div>

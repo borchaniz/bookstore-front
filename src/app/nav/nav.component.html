@@ -17,7 +17,7 @@
               </ul>
             </nav>
             <div class="header_extra ml-auto">
-              <div class="shopping_cart">
+              <div class="shopping_cart" *ngIf = "loggedUser">
                 <a>
                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 												 viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
@@ -32,7 +32,7 @@
                   <div>Cart <span>(0)</span></div>
                 </a>
               </div>
-              <div class="shopping_cart">
+              <div class="shopping_cart" *ngIf="!loggedUser">
                 <a>
                   <div style="margin-left: 5px" class="hassubs">
                     <i class="fa fa-user"></i>Login/ Sign Up
@@ -56,6 +56,18 @@
                       </div>
                       <div class="bottom text-center" style="margin-left: 28px">
                         New here ? <a routerLink="/join"><b>Join Us</b></a>
+                      </div>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+              <div class="shopping_cart" *ngIf="loggedUser">
+                <a>
+                  <div style="margin-left: 5px" class="hassubs">
+                    <i class="fa fa-user"></i>{{loggedUser.name}} {{loggedUser.familyName}}
+                    <ul class="subs rounded-border" style="text-align: left; ">
+                      <div class="bottom text-center" style="margin-left: 28px">
+                        <a (click)="logout()"><b>Logout</b></a>
                       </div>
                     </ul>
                   </div>
