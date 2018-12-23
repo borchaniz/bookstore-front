@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {GenericService} from './generic.service';
 import {User} from '../models/user';
@@ -11,11 +11,14 @@ export class UserService extends GenericService {
 
   constructor(private http: HttpClient) {
     super();
-    this.url += 'user/';
   }
 
 
   public register(user: User): Observable<User> {
-    return <Observable<User>> this.http.post(this.url + 'register/', user);
+    return <Observable<User>> this.http.post(this.url + 'user/register/', user);
+  }
+
+  public login(user: User): Observable<HttpResponse<Object>> {
+    return <Observable<HttpResponse<Object>>> this.http.post(this.url + 'login', user,{observe: "response"});
   }
 }

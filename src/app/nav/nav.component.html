@@ -10,7 +10,8 @@
                 <li class="hassubs">
                   <a>Categories</a>
                   <ul class="subs">
-                    <li *ngFor="let genre of genres"><a href="" routerLink="/category/{{genre.id}}">{{genre.label}}</a></li>
+                    <li *ngFor="let genre of genres"><a href="" routerLink="/category/{{genre.id}}">{{genre.label}}</a>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -36,30 +37,25 @@
                   <div style="margin-left: 5px" class="hassubs">
                     <i class="fa fa-user"></i>Login/ Sign Up
                     <ul class="subs rounded-border" style="text-align: left; ">
-                      <div class="row"style="min-width: 300px">
+                      <div class="row" style="min-width: 300px">
                         <form class="form" role="form" method="post" action="login" accept-charset="UTF-8">
                           <div class="form-group">
                             <label class="sr-only">Email address</label>
                             <input type="email" class="form-control" placeholder="Email address"
-                                   required>
+                                   [(ngModel)]="user.email" required name="login-email">
                           </div>
                           <div class="form-group">
                             <label class="sr-only">Password</label>
-                            <input type="password" class="form-control"
-                                   placeholder="Password" required autocomplete="off">
+                            <input type="password" class="form-control" name = "login-password"
+                                   placeholder="Password" required autocomplete="off" [(ngModel)]="user.password">
                           </div>
                           <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> keep me logged-in
-                            </label>
+                            <button type="submit" class="btn btn-primary btn-block" (click)="login()">Sign in</button>
                           </div>
                         </form>
                       </div>
                       <div class="bottom text-center" style="margin-left: 28px">
-                        New here ? <a routerLink = "/join"><b>Join Us</b></a>
+                        New here ? <a routerLink="/join"><b>Join Us</b></a>
                       </div>
                     </ul>
                   </div>
