@@ -3,6 +3,7 @@ import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {GenericService} from './generic.service';
 import {User} from '../models/user';
+import {Consts} from '../Consts';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,10 @@ export class UserService extends GenericService {
 
   public login(user: User): Observable<HttpResponse<Object>> {
     return <Observable<HttpResponse<Object>>> this.http.post(this.url + 'login', user,{observe: "response"});
+  }
+
+  getAuthUser() :Observable<User>{
+    const headers = this.headers.set("Authorization", localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<User>> this.http.get(this.url+"user/authenticated",{headers:headers});
   }
 }

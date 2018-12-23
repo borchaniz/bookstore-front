@@ -4,6 +4,7 @@ import {Genre} from '../shared/models/genre';
 import {User} from '../shared/models/user';
 import {UserService} from '../shared/services/user.service';
 import {tap} from 'rxjs/operators';
+import {Consts} from '../shared/Consts';
 
 @Component({
   selector: 'app-nav',
@@ -27,7 +28,11 @@ export class NavComponent implements OnInit {
   login() {
     this.userService.login(this.user).subscribe(resp => {
       // display its headers
-      console.log(resp.headers.get("Authorization"));
+      localStorage.setItem(Consts.TOKEN_STORAGE,resp.headers.get("Authorization"));
+      this.userService.getAuthUser().subscribe(data=>{
+        console.log(data);
+        localStorage.setItem(Consts.USER_STORAGE,JSON.stringify(data));
+      });
     });
   }
 
