@@ -5,7 +5,8 @@
       <!-- Product Image -->
       <div class="col-lg-6" style="display:inline-block;">
         <div class="details_image" style="display: inline-block">
-          <div class="details_image_large"><img src="assets/img/product_1.jpg" alt="">
+          <div class="details_image_large"><img src="assets/img/product_1.jpg" *ngIf="!book.image">
+            <div class="product_image"><img src="{{url+book.image}}" alt="" *ngIf="book.image"></div>
           </div>
           <div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
           </div>

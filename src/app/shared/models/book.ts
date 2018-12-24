@@ -11,4 +11,5 @@ export class Book {
   genre: Genre = new Genre();
   activeDiscount:Discount;
   author:Author;
+  image:string = null;
 }

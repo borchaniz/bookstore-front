@@ -5,7 +5,8 @@
         <div class="product_grid">
           <!-- Product -->
           <div class="col-md-4" *ngFor="let book of books" style="cursor: pointer" routerLink="/details/{{book.id}}">
-            <div class="product_image"><img src="assets/img/product_1.jpg" alt=""></div>
+            <div class="product_image"><img src="assets/img/product_1.jpg" alt="" *ngIf="!book.image"></div>
+            <div class="product_image" style="max-width: 340px; text-align: center"><img src="{{url+book.image}}" alt="" *ngIf="book.image" style="max-height: 340px"></div>
             <div class="product_content">
               <div class="product_title"><a href="product.html">{{book.title}}</a></div>
               <div class="product_price striketrough" *ngIf="book.activeDiscount">{{book.price}}DT</div>

@@ -17,6 +17,7 @@ export class DetailsComponent implements OnInit {
   quantity:number = 1;
   added:boolean = false;
   connected:boolean = localStorage.getItem(Consts.USER_STORAGE)!=null &&localStorage.getItem(Consts.TOKEN_STORAGE)!=null;
+  url:string = Consts.BASE_URL+"file/";
 
   constructor(private route:ActivatedRoute,
               private bookService:BookService,

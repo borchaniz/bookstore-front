@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Book} from '../shared/models/book';
 import {BookService} from '../shared/services/book.service';
 import {ActivatedRoute} from '@angular/router';
+import {Consts} from '../shared/Consts';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   books: Book[] = [];
   genreId: number = null;
-
+  url:string = Consts.BASE_URL+"file/";
   constructor(private bookService: BookService, private route: ActivatedRoute) {
   }
 

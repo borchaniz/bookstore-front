@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class CartComponent implements OnInit {
 
   user: User = new User();
+  url:string = Consts.BASE_URL+"file/";
 
   constructor(private userService: UserService, private router: Router) {
   }

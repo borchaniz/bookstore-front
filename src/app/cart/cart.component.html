@@ -21,7 +21,9 @@
           <!-- Name -->
           <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
             <div class="cart_item_image">
-              <div><img src="assets/img/product_1.jpg" alt=""></div>
+              <!--<div><img src="assets/img/product_1.jpg" alt="" *ngIf="!item.book.image"></div>-->
+              <div style="width: 183px; text-align: center"><img src="{{!item.book.image?'assets/img/product_1.jpg':url+item.book.image}}" alt="" style="max-height: 183px"></div>
+
             </div>
             <div class="cart_item_name_container">
               <div class="cart_item_name"><a>{{item.book.title}}</a></div>
