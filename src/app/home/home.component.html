@@ -8,7 +8,10 @@
             <div class="product_image"><img src="assets/img/product_1.jpg" alt=""></div>
             <div class="product_content">
               <div class="product_title"><a href="product.html">{{book.title}}</a></div>
-              <div class="product_price">{{book.price}} TND</div>
+              <div class="product_price striketrough" *ngIf="book.activeDiscount">{{book.price}}DT</div>
+              <div class="product_price" *ngIf="!book.activeDiscount">{{book.price}}DT</div>
+              <div class="product_price" *ngIf="book.activeDiscount">{{book.price*book.activeDiscount.percentage/100}}DT</div>
+
             </div>
           </div>
         </div>

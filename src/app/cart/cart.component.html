@@ -1,6 +1,6 @@
 <div class="cart_info">
   <div class="container" *ngIf="user.cart.length">
-    <div class="row" style="margin-top: 50px" >
+    <div class="row" style="margin-top: 50px">
       <div class="col">
         <!-- Column Titles -->
         <div class="cart_info_columns clearfix">
@@ -15,7 +15,9 @@
       <div class="col">
 
         <!-- Cart Item -->
-        <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" *ngFor="let item of user.cart">
+        <div
+          class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start"
+          *ngFor="let item of user.cart">
           <!-- Name -->
           <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
             <div class="cart_item_image">
@@ -27,7 +29,9 @@
             </div>
           </div>
           <!-- Price -->
-          <div class="cart_item_price">{{item.book.price}}DT</div>
+          <div class="cart_item_price">
+            {{(item.book.activeDiscount?item.book.activeDiscount.percentage/100:1)* item.book.price}}DT
+          </div>
           <!-- Quantity -->
           <div class="cart_item_quantity">
             <div class="product_quantity_container">
@@ -37,7 +41,7 @@
             </div>
           </div>
           <!-- Total -->
-          <div class="cart_item_total">{{item.book.price*item.quantity}}DT</div>
+          <div class="cart_item_total">{{(item.book.activeDiscount?item.book.activeDiscount.percentage/100:1)* item.book.price*item.quantity}}DT</div>
         </div>
 
       </div>
@@ -74,4 +78,4 @@
     <h3>Your cart is still empty empty</h3>
     <div class="button" style="text-align: center; margin: 20px auto auto;"><a routerLink="/">Start shopping</a></div>
   </div>
-  </div>
+</div>

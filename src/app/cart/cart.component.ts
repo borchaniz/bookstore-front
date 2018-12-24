@@ -23,7 +23,6 @@ export class CartComponent implements OnInit {
     }
     this.userService.getAuthUser().subscribe(data => {
       this.user = data;
-      console.log(data);
     });
   }
 

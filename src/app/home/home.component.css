@@ -1,3 +1,13 @@
 .col-md-4{
   display: inline-block;
 }
+
+.product_price{
+  display: inline-block;
+}
+
+.striketrough{
+  text-decoration: line-through;
+  color: #e95a5a;
+  margin-right: 20px;
+}

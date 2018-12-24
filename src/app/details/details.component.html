@@ -16,11 +16,15 @@
       <div class="col-lg-6" style="position: absolute;display: inline-block;top: 50px;">
         <div class="details_content">
           <div class="details_name">{{book.title}}</div>
+          <div class="details_name" *ngIf="book.author" style="font-size: 1.2em; margin-top: 0px">{{book.author.name}}
+          </div>
           <div class="in_stock_container" style="margin-top: 0px">
             <div class="availability">{{book.genre.label}}</div>
           </div>
-          <div class="details_discount">{{book.price}}DT</div>
-          <div class="details_price">{{0.8*book.price}}DT</div>
+          <div class="details_discount" *ngIf="book.activeDiscount">{{book.price}}DT</div>
+          <div class="details_price" *ngIf="!book.activeDiscount">{{book.price}}DT</div>
+          <div class="details_price" *ngIf="book.activeDiscount">{{book.price*book.activeDiscount.percentage/100}}DT
+          </div>
 
           <!-- In Stock -->
 
@@ -48,7 +52,8 @@
           </div>
           <label style="font-size: 2.4em; color: #808080; margin-top: 56px; margin-left: 40px" *ngIf="added"><i
             class="fa fa-check"></i>Added</label>
-          <label style="font-size: 1.2em; color: #808080; margin-top: 56px;" *ngIf="!connect"><i class="fa fa-user"></i> &nbsp; Sign in to manage your cart</label>
+          <label style="font-size: 1.2em; color: #808080; margin-top: 56px;" *ngIf="!connected"><i
+            class="fa fa-user"></i> &nbsp; Sign in to manage your cart</label>
 
         </div>
       </div>
