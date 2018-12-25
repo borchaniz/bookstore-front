@@ -34,7 +34,6 @@ export class NavComponent implements OnInit {
       this.userService.getAuthUser().subscribe(data => {
         localStorage.setItem(Consts.USER_STORAGE, JSON.stringify(data));
         location.reload();
-
       });
     }, error => {
       swal('Error', 'Please make sure you have entered the right credentials!', 'error');
